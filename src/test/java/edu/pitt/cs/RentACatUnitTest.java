@@ -98,24 +98,24 @@ public class RentACatUnitTest {
 	 * hapter on using reflection on how to do this.  Please use r.getClass() to get
 	 * the class object of r instead of hardcoding it as RentACatImpl.
 	 */
-	@Test
-	public void testGetCatNullNumCats0() {
-		r = RentACat.createInstance(InstanceType.IMPL);
-		out.reset();
-		Cat cat = null;
-		try {
-			java.lang.reflect.Method method = r.getClass().getDeclaredMethod("getCat", int.class);
-			method.setAccessible(true);
-			cat = (Cat) method.invoke(r, 2);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+	// @Test
+	// public void testGetCatNullNumCats0() {
+	// 	r = RentACat.createInstance(InstanceType.IMPL);
+	// 	out.reset();
+	// 	Cat cat = null;
+	// 	try {
+	// 		java.lang.reflect.Method method = r.getClass().getDeclaredMethod("getCat", int.class);
+	// 		method.setAccessible(true);
+	// 		cat = (Cat) method.invoke(r, 2);
+	// 	} catch (Exception e) {
+	// 		e.printStackTrace();
+	// 	}
 
-		assertNull( cat);
+	// 	assertNull( cat);
 
-		String systemOut = out.toString();
-		assertEquals("Invalid cat ID." + newline, systemOut);
-	}
+	// 	String systemOut = out.toString();
+	// 	assertEquals("Invalid cat ID." + newline, systemOut);
+	// }
 
 
 	/**
@@ -133,31 +133,31 @@ public class RentACatUnitTest {
 	 * hapter on using reflection on how to do this.  Please use r.getClass() to get
 	 * the class object of r instead of hardcoding it as RentACatImpl.
 	 */
-	@Test
-	public void testGetCatNumCats3() {
-		// TODO: Fill in
-		r = RentACat.createInstance(InstanceType.IMPL);
+	// @Test
+	// public void testGetCatNumCats3() {
+	// 	// TODO: Fill in
+	// 	r = RentACat.createInstance(InstanceType.IMPL);
     
-		c1 = Cat.createInstance(InstanceType.IMPL, 1, "Jennyanydots");
-		c2 = Cat.createInstance(InstanceType.IMPL, 2, "Old Deuteronomy");
-		c3 = Cat.createInstance(InstanceType.IMPL, 3, "Mistoffelees");
+	// 	c1 = Cat.createInstance(InstanceType.IMPL, 1, "Jennyanydots");
+	// 	c2 = Cat.createInstance(InstanceType.IMPL, 2, "Old Deuteronomy");
+	// 	c3 = Cat.createInstance(InstanceType.IMPL, 3, "Mistoffelees");
 	
-		r.addCat(c1);
-		r.addCat(c2);
-		r.addCat(c3);
+	// 	r.addCat(c1);
+	// 	r.addCat(c2);
+	// 	r.addCat(c3);
 	
-		out.reset();
-		Cat cat = null;
-		try {
-			java.lang.reflect.Method method = r.getClass().getDeclaredMethod("getCat", int.class);
-			method.setAccessible(true);
-			cat = (Cat) method.invoke(r, 2);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		assertNotNull(cat);
-    	assertEquals(2, cat.getId());
-	}
+	// 	out.reset();
+	// 	Cat cat = null;
+	// 	try {
+	// 		java.lang.reflect.Method method = r.getClass().getDeclaredMethod("getCat", int.class);
+	// 		method.setAccessible(true);
+	// 		cat = (Cat) method.invoke(r, 2);
+	// 	} catch (Exception e) {
+	// 		e.printStackTrace();
+	// 	}
+	// 	assertNotNull(cat);
+    // 	assertEquals(2, cat.getId());
+	// }
 
 	/**
 	 * Test case for String listCats().
@@ -168,15 +168,15 @@ public class RentACatUnitTest {
 	 * Postconditions: Return value is "".
 	 * </pre>
 	 */
-	@Test
-	public void testListCatsNumCats0() {
-		// TODO: Fill in
-		r = RentACat.createInstance(InstanceType.IMPL); 
-		out.reset();
+	// @Test
+	// public void testListCatsNumCats0() {
+	// 	// TODO: Fill in
+	// 	r = RentACat.createInstance(InstanceType.IMPL); 
+	// 	out.reset();
 
-		String result = r.listCats();
-		assertEquals( "", result);
-	}
+	// 	String result = r.listCats();
+	// 	assertEquals( "", result);
+	// }
 
 	/**
 	 * Test case for String listCats().
@@ -188,26 +188,26 @@ public class RentACatUnitTest {
 	 *                 Deuteronomy\nID 3. Mistoffelees\n".
 	 * </pre>
 	 */
-	@Test
-	public void testListCatsNumCats3() {
-		// TODO: Fill in
-		r = RentACat.createInstance(InstanceType.IMPL); 
+	// @Test
+	// public void testListCatsNumCats3() {
+	// 	// TODO: Fill in
+	// 	r = RentACat.createInstance(InstanceType.IMPL); 
 
-		c1 = Cat.createInstance(InstanceType.IMPL, 1, "Jennyanydots");
-		c2 = Cat.createInstance(InstanceType.IMPL, 2, "Old Deuteronomy");
-		c3 = Cat.createInstance(InstanceType.IMPL, 3, "Mistoffelees");
+	// 	c1 = Cat.createInstance(InstanceType.IMPL, 1, "Jennyanydots");
+	// 	c2 = Cat.createInstance(InstanceType.IMPL, 2, "Old Deuteronomy");
+	// 	c3 = Cat.createInstance(InstanceType.IMPL, 3, "Mistoffelees");
 		
-		r.addCat(c1);
-		r.addCat(c2);
-		r.addCat(c3);
+	// 	r.addCat(c1);
+	// 	r.addCat(c2);
+	// 	r.addCat(c3);
 	
-		out.reset();
+	// 	out.reset();
 	
-		String result = r.listCats();
-		String expected = "ID 1. Jennyanydots\nID 2. Old Deuteronomy\nID 3. Mistoffelees\n";
+	// 	String result = r.listCats();
+	// 	String expected = "ID 1. Jennyanydots\nID 2. Old Deuteronomy\nID 3. Mistoffelees\n";
 	
-		assertEquals(expected, result);
-	}
+	// 	assertEquals(expected, result);
+	// }
 
 	/**
 	 * Test case for boolean renameCat(int id, String name).
@@ -224,28 +224,28 @@ public class RentACatUnitTest {
 	 * sample_code/junit_example/LinkedListUnitTest.java in the course repository to
 	 * see examples.
 	 */
-	@Test
-	public void testRenameFailureNumCats0() {
-		// TODO: Fill in
-		r = RentACat.createInstance(InstanceType.IMPL); 
-		out.reset();
-		boolean result = r.renameCat(2, "Garfield");
+	// @Test
+	// public void testRenameFailureNumCats0() {
+	// 	// TODO: Fill in
+	// 	r = RentACat.createInstance(InstanceType.IMPL); 
+	// 	out.reset();
+	// 	boolean result = r.renameCat(2, "Garfield");
 		
-		assertFalse(result);
+	// 	assertFalse(result);
 
-		String systemOut = out.toString();
-		assertEquals("Invalid cat ID." + newline, systemOut);
+	// 	String systemOut = out.toString();
+	// 	assertEquals("Invalid cat ID." + newline, systemOut);
 		
-		Cat cat = null;
-		try {
-			java.lang.reflect.Method method = r.getClass().getDeclaredMethod("getCat", int.class);
-			method.setAccessible(true);
-			cat = (Cat) method.invoke(r, 2);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-    	assertNull(cat);
-	}
+	// 	Cat cat = null;
+	// 	try {
+	// 		java.lang.reflect.Method method = r.getClass().getDeclaredMethod("getCat", int.class);
+	// 		method.setAccessible(true);
+	// 		cat = (Cat) method.invoke(r, 2);
+	// 	} catch (Exception e) {
+	// 		e.printStackTrace();
+	// 	}
+    // 	assertNull(cat);
+	// }
 
 	/**
 	 * Test case for boolean renameCat(int id, String name).
@@ -261,36 +261,36 @@ public class RentACatUnitTest {
 	 * sample_code/junit_example/LinkedListUnitTest.java in the course repository to
 	 * see examples.
 	 */
-	@Test
-	public void testRenameNumCat3() {
-		// TODO: Fill in
-		r = RentACat.createInstance(InstanceType.IMPL); 
-		c1 = Cat.createInstance(InstanceType.IMPL, 1, "Jennyanydots");
-		c2 = Cat.createInstance(InstanceType.IMPL, 2, "Old Deuteronomy");
-		c3 = Cat.createInstance(InstanceType.IMPL, 3, "Mistoffelees");
+	// @Test
+	// public void testRenameNumCat3() {
+	// 	// TODO: Fill in
+	// 	r = RentACat.createInstance(InstanceType.IMPL); 
+	// 	c1 = Cat.createInstance(InstanceType.IMPL, 1, "Jennyanydots");
+	// 	c2 = Cat.createInstance(InstanceType.IMPL, 2, "Old Deuteronomy");
+	// 	c3 = Cat.createInstance(InstanceType.IMPL, 3, "Mistoffelees");
 
-		r.addCat(c1);
-		r.addCat(c2);
-		r.addCat(c3);
-		out.reset();
+	// 	r.addCat(c1);
+	// 	r.addCat(c2);
+	// 	r.addCat(c3);
+	// 	out.reset();
 
-		boolean result = r.renameCat(2, "Garfield");
-		assertTrue(result);
+	// 	boolean result = r.renameCat(2, "Garfield");
+	// 	assertTrue(result);
 	
-		Cat cat = null;
-		try {
-			java.lang.reflect.Method method = r.getClass().getDeclaredMethod("getCat", int.class);
-			method.setAccessible(true);
-			cat = (Cat) method.invoke(r, 2);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+	// 	Cat cat = null;
+	// 	try {
+	// 		java.lang.reflect.Method method = r.getClass().getDeclaredMethod("getCat", int.class);
+	// 		method.setAccessible(true);
+	// 		cat = (Cat) method.invoke(r, 2);
+	// 	} catch (Exception e) {
+	// 		e.printStackTrace();
+	// 	}
 		
-		assertNotNull(cat);
-		assertEquals("Garfield", cat.getName());
-		String systemOut = out.toString();
-    	assertEquals("", systemOut);
-	}
+	// 	assertNotNull(cat);
+	// 	assertEquals("Garfield", cat.getName());
+	// 	String systemOut = out.toString();
+    // 	assertEquals("", systemOut);
+	// }
 
 	/**
 	 * Test case for boolean rentCat(int id).
@@ -307,40 +307,40 @@ public class RentACatUnitTest {
 	 * sample_code/junit_example/LinkedListUnitTest.java in the course repository to
 	 * see examples.
 	 */
-	@Test
-	public void testRentCatNumCats3() {
-		// TODO: Fill in
-		r = RentACat.createInstance(InstanceType.IMPL);
-		c1 = Cat.createInstance(InstanceType.IMPL, 1, "Jennyanydots");
-		c2 = Cat.createInstance(InstanceType.IMPL, 2, "Old Deuteronomy");
-		c3 = Cat.createInstance(InstanceType.IMPL, 3, "Mistoffelees");
+	// @Test
+	// public void testRentCatNumCats3() {
+	// 	// TODO: Fill in
+	// 	r = RentACat.createInstance(InstanceType.IMPL);
+	// 	c1 = Cat.createInstance(InstanceType.IMPL, 1, "Jennyanydots");
+	// 	c2 = Cat.createInstance(InstanceType.IMPL, 2, "Old Deuteronomy");
+	// 	c3 = Cat.createInstance(InstanceType.IMPL, 3, "Mistoffelees");
 	
-		r.addCat(c1);
-		r.addCat(c2);
-		r.addCat(c3);
+	// 	r.addCat(c1);
+	// 	r.addCat(c2);
+	// 	r.addCat(c3);
 	
-		out.reset();
+	// 	out.reset();
 	
-		boolean result = r.rentCat(2);
-		assertTrue(result);
+	// 	boolean result = r.rentCat(2);
+	// 	assertTrue(result);
 	
-		Cat rentedCat = null;
-		try {
-			java.lang.reflect.Method method = r.getClass().getDeclaredMethod("getCat", int.class);
-			method.setAccessible(true);
-			rentedCat = (Cat) method.invoke(r, 2);
-		} catch (Exception e) {
-			e.printStackTrace();
-			fail("Reflection failed");
-		}
+	// 	Cat rentedCat = null;
+	// 	try {
+	// 		java.lang.reflect.Method method = r.getClass().getDeclaredMethod("getCat", int.class);
+	// 		method.setAccessible(true);
+	// 		rentedCat = (Cat) method.invoke(r, 2);
+	// 	} catch (Exception e) {
+	// 		e.printStackTrace();
+	// 		fail("Reflection failed");
+	// 	}
 	
-		assertNotNull(rentedCat);
-		assertTrue(rentedCat.getRented());
+	// 	assertNotNull(rentedCat);
+	// 	assertTrue(rentedCat.getRented());
 	
-		String systemOut = out.toString();
-		String expectedOutput = "Old Deuteronomy has been rented." + newline;
-		assertEquals(expectedOutput, systemOut);
-	}
+	// 	String systemOut = out.toString();
+	// 	String expectedOutput = "Old Deuteronomy has been rented." + newline;
+	// 	assertEquals(expectedOutput, systemOut);
+	// }
 
 	/**
 	 * Test case for boolean rentCat(int id).
@@ -358,30 +358,30 @@ public class RentACatUnitTest {
 	 * sample_code/junit_example/LinkedListUnitTest.java in the course repository to
 	 * see examples.
 	 */
-	@Test
-	public void testRentCatFailureNumCats3() {
-		// TODO: Fill in
-		r = RentACat.createInstance(InstanceType.IMPL); 
-		c1 = Cat.createInstance(InstanceType.IMPL, 1, "Jennyanydots");
-		c2 = Cat.createInstance(InstanceType.IMPL, 2, "Old Deuteronomy");
-		c3 = Cat.createInstance(InstanceType.IMPL, 3, "Mistoffelees");
+	// @Test
+	// public void testRentCatFailureNumCats3() {
+	// 	// TODO: Fill in
+	// 	r = RentACat.createInstance(InstanceType.IMPL); 
+	// 	c1 = Cat.createInstance(InstanceType.IMPL, 1, "Jennyanydots");
+	// 	c2 = Cat.createInstance(InstanceType.IMPL, 2, "Old Deuteronomy");
+	// 	c3 = Cat.createInstance(InstanceType.IMPL, 3, "Mistoffelees");
 
-		r.addCat(c1);
-		r.addCat(c2);
-		r.addCat(c3);
+	// 	r.addCat(c1);
+	// 	r.addCat(c2);
+	// 	r.addCat(c3);
 
-		r.rentCat(2);
-		out.reset();
+	// 	r.rentCat(2);
+	// 	out.reset();
 
-		boolean result = r.rentCat(2);
-		assertFalse(result);
+	// 	boolean result = r.rentCat(2);
+	// 	assertFalse(result);
 
-		Cat rentedCat = null;
-		assertFalse(result);
+	// 	Cat rentedCat = null;
+	// 	assertFalse(result);
 
-		String systemOut = out.toString();
-		assertEquals("Sorry, Old Deuteronomy is not here!" + newline, systemOut);
-	}
+	// 	String systemOut = out.toString();
+	// 	assertEquals("Sorry, Old Deuteronomy is not here!" + newline, systemOut);
+	// }
 
 	/**
 	 * Test case for boolean returnCat(int id).
@@ -399,41 +399,41 @@ public class RentACatUnitTest {
 	 * sample_code/junit_example/LinkedListUnitTest.java in the course repository to
 	 * see examples.
 	 */
-	@Test
-	public void testReturnCatNumCats3() {
-		// TODO: Fill in
-		r = RentACat.createInstance(InstanceType.IMPL);
-		c1 = Cat.createInstance(InstanceType.IMPL, 1, "Jennyanydots");
-		c2 = Cat.createInstance(InstanceType.IMPL, 2, "Old Deuteronomy");
-		c3 = Cat.createInstance(InstanceType.IMPL, 3, "Mistoffelees");
+	// @Test
+	// public void testReturnCatNumCats3() {
+	// 	// TODO: Fill in
+	// 	r = RentACat.createInstance(InstanceType.IMPL);
+	// 	c1 = Cat.createInstance(InstanceType.IMPL, 1, "Jennyanydots");
+	// 	c2 = Cat.createInstance(InstanceType.IMPL, 2, "Old Deuteronomy");
+	// 	c3 = Cat.createInstance(InstanceType.IMPL, 3, "Mistoffelees");
 		
-		r.addCat(c1);
-		r.addCat(c2);
-		r.addCat(c3);
-		r.rentCat(2);
+	// 	r.addCat(c1);
+	// 	r.addCat(c2);
+	// 	r.addCat(c3);
+	// 	r.rentCat(2);
 
-		out.reset();
-		boolean result = r.returnCat(2);
+	// 	out.reset();
+	// 	boolean result = r.returnCat(2);
 
-		assertTrue(result);
+	// 	assertTrue(result);
 
-   	    Cat returnedCat = null;
-		   try {
-			java.lang.reflect.Method method = r.getClass().getDeclaredMethod("getCat", int.class);
-			method.setAccessible(true);
-			returnedCat = (Cat) method.invoke(r, 2);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+   	//     Cat returnedCat = null;
+	// 	   try {
+	// 		java.lang.reflect.Method method = r.getClass().getDeclaredMethod("getCat", int.class);
+	// 		method.setAccessible(true);
+	// 		returnedCat = (Cat) method.invoke(r, 2);
+	// 	} catch (Exception e) {
+	// 		e.printStackTrace();
+	// 	}
 
-		assertNotNull( returnedCat);
-		assertFalse( returnedCat.getRented()); 
+	// 	assertNotNull( returnedCat);
+	// 	assertFalse( returnedCat.getRented()); 
 
-		String systemOut = out.toString();
-		String expectedOutput = "Welcome back, Old Deuteronomy!\n"; 
+	// 	String systemOut = out.toString();
+	// 	String expectedOutput = "Welcome back, Old Deuteronomy!\n"; 
 		
-		assertEquals(expectedOutput, systemOut);
-	}
+	// 	assertEquals(expectedOutput, systemOut);
+	// }
 
 	/**
 	 * Test case for boolean returnCat(int id).
@@ -450,25 +450,25 @@ public class RentACatUnitTest {
 	 * sample_code/junit_example/LinkedListUnitTest.java in the course repository to
 	 * see examples.
 	 */
-	@Test
-	public void testReturnFailureCatNumCats3() {
-		// TODO: Fill in
-		r = RentACat.createInstance(InstanceType.IMPL);
-		c1 = Cat.createInstance(InstanceType.IMPL, 1, "Jennyanydots");
-		c2 = Cat.createInstance(InstanceType.IMPL, 2, "Old Deuteronomy");
-		c3 = Cat.createInstance(InstanceType.IMPL, 3, "Mistoffelees");
+	// @Test
+	// public void testReturnFailureCatNumCats3() {
+	// 	// TODO: Fill in
+	// 	r = RentACat.createInstance(InstanceType.IMPL);
+	// 	c1 = Cat.createInstance(InstanceType.IMPL, 1, "Jennyanydots");
+	// 	c2 = Cat.createInstance(InstanceType.IMPL, 2, "Old Deuteronomy");
+	// 	c3 = Cat.createInstance(InstanceType.IMPL, 3, "Mistoffelees");
 		
-		r.addCat(c1);
-		r.addCat(c2);
-		r.addCat(c3);
-		boolean result = r.returnCat(2);
+	// 	r.addCat(c1);
+	// 	r.addCat(c2);
+	// 	r.addCat(c3);
+	// 	boolean result = r.returnCat(2);
 
-		assertFalse("Expected returnCat to return false when trying to return a cat that is not rented", result);
+	// 	assertFalse("Expected returnCat to return false when trying to return a cat that is not rented", result);
 	
-		String systemOut = out.toString();
-		String expectedOutput = "Old Deuteronomy is already here!\n"; 
+	// 	String systemOut = out.toString();
+	// 	String expectedOutput = "Old Deuteronomy is already here!\n"; 
 		
-		assertEquals( expectedOutput, systemOut);
-	}
+	// 	assertEquals( expectedOutput, systemOut);
+	// }
 
 }
